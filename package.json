@@ -1,6 +1,6 @@
 {
   "name": "create",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "bin": {
     "create": "./bin/index.js"
   },
@@ -50,11 +50,12 @@
     "eslint": "^8.6.0",
     "eslint-config-alloy": "^4.4.0",
     "husky": "^7.0.4",
+    "lint-staged": "^12.1.7",
     "prettier": "^2.5.1",
     "typescript": "^4.5.4"
   },
   "lint-staged": {
-    "packages/**/*.{js,ts}": "eslint --fix"
+    "src/**/*.{js,ts}": "eslint --fix"
   },
   "commitlint": {
     "extends": [
