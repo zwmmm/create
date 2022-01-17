@@ -13,7 +13,6 @@ module.exports = {
     { value: 'revert', name: 'chore:    构建过程或辅助工具的变动' },
     { value: 'chore', name: 'revert:   回滚' },
     { value: 'build', name: 'build:    打包' },
-
     { value: 'example', name: 'example:  示例' }
   ],
   messages: {

@@ -1,13 +1,14 @@
 {
-  "name": "create",
+  "name": "create-viego",
   "version": "0.0.2",
   "bin": {
-    "create": "./bin/index.js"
+    "create": "./bin/index.js",
+    "c": "./bin/index.js"
   },
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "dependencies": {
-    "commander": "^8.3.0",
+    "degit": "^2.8.4",
     "enquirer": "^2.3.6",
     "rimraf": "^3.0.2",
     "zx": "^4.2.0"
@@ -15,7 +16,7 @@
   "scripts": {
     "prepare": "husky install",
     "build": "rimraf ./dist && pnpm tsc",
-    "dev": "pnpm build -- --watch",
+    "dev": "pnpm tsc --watch",
     "commit": "./node_modules/cz-customizable/standalone.js"
   },
   "repository": {

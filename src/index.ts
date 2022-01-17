@@ -1,14 +1,23 @@
-import { Command } from "commander";
-// @ts-ignore
-import { version } from "../package.json";
-import { createTool } from "./action/createTool";
+import { $, cd, question } from 'zx'
+import { join } from 'path'
+import { log, error } from './utils/log'
 
-const program = new Command();
+async function main(dir: string) {
+  try {
+    const name = await question('选择模板', {
+      choices: ['tool']
+    })
+    const input = join(__dirname, '../templates', name)
+    process.env.FORCE_COLOR = '3'
+    await $`cp -R ${input}/. ${dir}`
+    await cd(dir)
+    await $`git init`
+    await $`pnpm install`
+    await $`pnpm changeset init`
+    log('模板生成成功')
+  } catch (e: any) {
+    error(e.message)
+  }
+}
 
-program.version(
-  version
-)
-
-program.command('tool <name>').description('创建工具模板').action(createTool)
-
-program.parse(process.argv);
+export { main }
