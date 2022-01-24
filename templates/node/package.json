@@ -1,0 +1,11 @@
+{
+  "name": "node",
+  "private": true,
+  "scripts": {
+    "build": "rimraf ./dist && pnpm tsc",
+    "dev": "pnpm tsc --watch"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.8"
+  }
+}

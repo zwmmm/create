@@ -1,0 +1,17 @@
+{
+  "name": "cli",
+  "private": false,
+  "bin": {
+    "create": "./bin/index.js"
+  },
+  "dependencies": {
+    "commander": "^8.3.0",
+    "enquirer": "^2.3.6",
+    "rimraf": "^3.0.2",
+    "zx": "^4.2.0"
+  },
+  "files": [
+    "dist",
+    "bin"
+  ]
+}
